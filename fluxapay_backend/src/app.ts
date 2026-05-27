@@ -28,6 +28,7 @@ import dashboardRoutes from "./routes/dashboard.route";
 import auditRoutes from "./routes/audit.route";
 import merchantDeletionRoutes from "./routes/merchantDeletion.route";
 import dataExportRoutes from "./routes/dataExport.route";
+import merchantRegistryRoutes from "./routes/merchantRegistry.route";
 import oracleRoutes from "./routes/oracle.route";
 
 const app = express();
@@ -146,6 +147,7 @@ app.use("/api/v1/dashboard", merchantRateLimit(), dashboardRoutes);
 app.use("/api/v1/admin/reconciliation", reconciliationRoutes);
 app.use("/api/v1/admin/settlement", settlementBatchRoutes);
 app.use("/api/v1/admin/sweep", sweepRoutes);
+app.use("/api/v1/admin/registry", merchantRegistryRoutes);
 app.use("/api/v1/admin", auditRoutes);
 app.use("/api/v1", oracleRoutes);
 
